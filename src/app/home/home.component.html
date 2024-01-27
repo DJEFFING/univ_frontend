@@ -19,38 +19,37 @@
         </div>
       </div>
       <!-- (ngSubmit)="onSubmit(loginForm)" -->
-      <form action="" (ngSubmit)="onSubmit(loginForm)">
+      <form action="" #loginForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
 
           <div class="col-lg-3 col-sm-6 mb-25">
-            <select class="nice-select">
+            <select class="nice-select" name="category" ngModel>
               <option *ngFor="let category of filterCategories" value="{{category.id}}">{{category.title}}</option>
               <!-- <option>Public</option> -->
             </select>
           </div>
 
-          <div class="col-lg-3 col-sm-6 mb-25">
-            <select class="nice-select">
-              <option *ngFor="let establishment of filterEstablishment">{{establishment.title | uppercase}}</option>
-
-
+          <div class="col-lg-3 col-sm-6 mb-25" >
+            <select class="nice-select" name="establishment" ngModel>
+              <option *ngFor="let establishment of filterEstablishment" value="{{establishment.id}}">{{establishment.title | uppercase}}</option>
             </select>
           </div>
 
           <div class="col-lg-3 col-sm-6 mb-25">
-            <select class="nice-select">
+            <select class="nice-select" name="city" ngModel>
               <option *ngFor="let city of filterCities" value="{{city.id}}">{{city.title}}</option>
             </select>
           </div>
 
           <div class="col-lg-3 col-sm-6 mb-25">
-            <select class="nice-select">
+            <select class="nice-select" name="sector" ngModel>
+              <option selected>Filière....</option>
               <option *ngFor="let sector of filterSertor" value="{{sector.id}}">{{sector.title}}</option>
             </select>
           </div>
 
           <div class="col-lg-3 col-sm-6 mb-25">
-            <select class="nice-select">
+            <select class="nice-select" name="priceMin" ngModel>
               <option value="50 0000">50 0000F</option>
               <option value="100 0000">100 000F</option>
               <option value="150 0000">150 000F</option>
@@ -59,7 +58,7 @@
           </div>
 
           <div class="col-lg-3 col-sm-6 mb-25">
-            <select class="nice-select">
+            <select class="nice-select" name="priceMax" ngModel>
               <option value="50 0000">50 0000F</option>
               <option value="100 0000">100 000F</option>
               <option value="150 0000">150 000F</option>
@@ -73,7 +72,7 @@
           </div>
 
           <div class="col-lg-3 col-sm-6 mb-25">
-            <input type="submit"  value="RECHERCHE" >
+            <input type="submit"  value="RECHERCHE"  [disabled]="!loginForm.valid">
             <!-- [disabled]="!loginForm.valid -->
           </div>
 

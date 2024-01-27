@@ -2,14 +2,14 @@ import { University } from '../../models/university';
 import { UniversityService } from '../../services/university.service';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+// import { NgModule } from '@angular/core';
 import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { HomeComponent } from '../../home/home.component';
 
 @Component({
   selector: 'app-uiversity-list',
   standalone: true,
-  imports: [CommonModule,RouterOutlet, HomeComponent,RouterLink,RouterModule],
+  imports: [CommonModule,RouterOutlet, HomeComponent,RouterLink,RouterModule,],
   templateUrl: './uiversity-list.component.html',
   styleUrl: './uiversity-list.component.scss'
 })

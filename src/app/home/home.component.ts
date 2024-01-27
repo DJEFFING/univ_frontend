@@ -23,10 +23,6 @@ export class HomeComponent implements OnInit{
 // loginForm: any;
 @ViewChild('loginForm') loginForm!: NgForm;
 
-onSubmit(form: NgForm) {
-  console.log(form.value);
-  // Do login here
-}
   categories:Category[] = []
   filterCategories:Category[] = [];
 
@@ -39,6 +35,8 @@ onSubmit(form: NgForm) {
 
   cities:City[] = [];
   filterCities:City[] = [];
+
+  resultSearch:University[] =[];
 
   public univerities:University[] = [];
   public filsterUniversity: University[] =[];
@@ -93,7 +91,26 @@ onSubmit(form: NgForm) {
     })
 
 
-    // throw new Error('Method not implemented.');
+  }
+
+
+  onSubmit() {
+    console.log(this.loginForm.value);
+
+    // Do login here
+    let res =[];
+    this.resultSearch = this.filsterUniversity;
+    res = this.filsterUniversity.filter(
+      (university:University) => university.category.id == this.loginForm.value.category &&
+      university.city.id == this.loginForm.value.city &&
+      university.etablishment.id == this.loginForm.value.establishment
+    )
+    this.filsterUniversity=res;
+    console.log("resultat", res);
+    // const res = this.hotels.filter(
+    //   (hotel: IHotel) => hotel.hotelName.toLocaleLowerCase().indexOf(criteria) !== -1
+    // );
+
   }
 
 
