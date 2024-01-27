@@ -11,6 +11,8 @@ import { SectorService } from '../services/sector.service';
 import { UniversityService } from '../services/university.service';
 import { University } from '../models/university';
 import { FormsModule, NgForm } from '@angular/forms';
+import { TrainingCenter } from '../models/trainingcenter';
+import { TraningCenterService } from '../services/traning-center.service';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +29,8 @@ onSubmit(form: NgForm) {
   console.log(form.value);
   // Do login here
 }
+public trainingcenter: TrainingCenter[]=[];
+public filterTrainingCenter: TrainingCenter[]=[];
   categories:Category[] = []
   filterCategories:Category[] = [];
 
@@ -50,7 +54,8 @@ onSubmit(form: NgForm) {
     private cityService:CityService,
     private establishmentService:EstablishmentService,
     private sectorService:SectorService,
-    private universityService: UniversityService
+    private universityService: UniversityService,
+    private trainingCenterService: TraningCenterService
   ){
 
   }
@@ -90,6 +95,12 @@ onSubmit(form: NgForm) {
         this.filsterUniversity = this.univerities;
       },
       error: err => this.errorMessage = err
+    }),
+    this.trainingCenterService.getAllTrainingCenter().subscribe({
+      next: trainingcenter=>{
+        this.trainingcenter = trainingcenter;
+        this.filterTrainingCenter= this.trainingcenter;
+      }
     })
 
 

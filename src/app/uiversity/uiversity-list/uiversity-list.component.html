@@ -65,28 +65,7 @@
           <div class="tab-content">
             <div class="tab-pane active" id="all">
               <div class="row">
-                <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-                  <!-- single-property Start -->
-                  <div class="single-property mt-30">
-                    <div class="property-img">
-                      <a href="properties-details.html">
-                        <img src="assets/images/propertes/01.jpg" alt="">
-                      </a>
-                      <span class="level-stryker">FOR RENT</span>
-                    </div>
-                    <div class="property-desc">
-                      <h4><a href="properties-details.html"> test</a></h4>
-                      <p>
-                        <span class="location">22 First street, Chicago, USA</span>
-                        <span class="property-info">1200 Sqft, 3 Bed, 2 Bath, 1 Garage </span>
-                      </p>
-                      <div class="price-box">
-                        <p>Price $ 1,59,000</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- single-property End -->
-                </div>
+
 
                 <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6" *ngFor="let university of filsterUniversity">
                   <!-- single-property Start -->
@@ -94,7 +73,7 @@
                     <div class="single-property mt-30">
                       <div class="property-img">
                         <a href="properties-details.html">
-                          <img src="assets/images/propertes/01.jpg" alt="">
+                          <img [src]="university.logo" alt="">
                         </a>
                         <span class="level-stryker">{{university.category.title}}</span>
                       </div>
@@ -105,7 +84,7 @@
                           <span class="property-info">{{university.description}} </span>
                         </p>
                         <div class="price-box">
-                          <!-- <p>Price $ 1,59,000</p> -->
+                          <p>{{university.mangerNumber}}</p>
                         </div>
                       </div>
                     </div>
@@ -123,7 +102,7 @@
                   <div class="single-property mt-30">
                     <div class="property-img">
                       <a href="properties-details.html">
-                        <img src="assets/images/propertes/01.jpg" alt="">
+                        <img [src]="university.logo" alt="">
                       </a>
                       <span class="level-stryker">{{university.category.title}}</span>
                     </div>
@@ -145,183 +124,32 @@
             </div>
             <div class="tab-pane" id="sale">
               <div class="row">
-                <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
+                <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6" *ngFor="let trainingCenter of filterTrainingCenter">
                   <!-- single-property Start -->
                   <div class="single-property mt-30">
                     <div class="property-img">
                       <a href="properties-details.html">
-                        <img src="assets/images/propertes/02.jpg" alt="">
+                        <img [src]="trainingCenter.logo" alt="">
                       </a>
-                      <span class="level-stryker">FOR RENT</span>
+                      <span class="level-stryker">{{trainingCenter.category.title}}</span>
                     </div>
                     <div class="property-desc">
-                      <h4><a href="properties-details.html">Mariyasa de Casel </a></h4>
+                      <h4><a href="properties-details.html">{{trainingCenter.name}} </a></h4>
                       <p>
-                        <span class="location">22 First street, Chicago, USA</span>
-                        <span class="property-info">1200 Sqft, 3 Bed, 2 Bath, 1 Garage </span>
+                        <span class="location"> {{trainingCenter.city.title}}, Cameroun</span>
+                        <span class="property-info">{{trainingCenter.description}}</span>
                       </p>
                       <div class="price-box">
-                        <p>Price $ 1,59,000</p>
+                        <p>{{trainingCenter.mangerNumber}}</p>
                       </div>
                     </div>
                   </div>
                   <!-- single-property End -->
                 </div>
 
-                <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-                  <!-- single-property Start -->
-                  <div class="single-property mt-30">
-                    <div class="property-img">
-                      <a href="properties-details.html">
-                        <img src="assets/images/propertes/04.jpg" alt="">
-                      </a>
-                    </div>
-                    <div class="property-desc">
-                      <h4><a href="properties-details.html">Rose de Alfanez</a></h4>
-                      <p>
-                        <span class="location">132 Future Street, Boston, USA</span>
-                        <span class="property-info">1600 Sqft, 4 Bed, 2 Bath, 2 Garage </span>
-                      </p>
-                      <div class="price-box">
-                        <p>Price $ 1,59,000</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- single-property End -->
-                </div>
 
-                <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-                  <!-- single-property Start -->
-                  <div class="single-property mt-30">
-                    <div class="property-img">
-                      <a href="properties-details.html">
-                        <img src="assets/images/propertes/06.jpg" alt="">
-                      </a>
-                      <span class="level-stryker-2">FOR RENT</span>
-                    </div>
-                    <div class="property-desc">
-                      <h4><a href="properties-details.html">La Casanda Villa</a></h4>
-                      <p>
-                        <span class="location">1 DE Silicon Tower, Denver</span>
-                        <span class="property-info">1800 Sqft, 6 Bed, 4 Bath, 3 Garage </span>
-                      </p>
-                      <div class="price-box">
-                        <p>Price $2,32,000</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- single-property End -->
-                </div>
 
-                <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-                  <!-- single-property Start -->
-                  <div class="single-property mt-30">
-                    <div class="property-img">
-                      <a href="properties-details.html">
-                        <img src="assets/images/propertes/08.jpg" alt="">
-                      </a>
-                    </div>
-                    <div class="property-desc">
-                      <h4><a href="properties-details.html">Rainforest de Olive</a></h4>
-                      <p>
-                        <span class="location">22 First street, Chicago, USA</span>
-                        <span class="property-info">1200 Sqft, 3 Bed, 2 Bath, 1 Garage </span>
-                      </p>
-                      <div class="price-box">
-                        <p>Rent $32,00/m</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- single-property End -->
-                </div>
 
-                <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-                  <!-- single-property Start -->
-                  <div class="single-property mt-30">
-                    <div class="property-img">
-                      <a href="properties-details.html">
-                        <img src="assets/images/propertes/01.jpg" alt="">
-                      </a>
-                    </div>
-                    <div class="property-desc">
-                      <h4><a href="properties-details.html">Tulip Duplex Villa</a></h4>
-                      <p>
-                        <span class="location">Simplex Tower, Washington, USA</span>
-                        <span class="property-info">980 Sqft, 3 Bed, 2 Bath, 1 Garage </span>
-                      </p>
-                      <div class="price-box">
-                        <p>Price $ 1,59,000</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- single-property End -->
-                </div>
-
-                <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-                  <!-- single-property Start -->
-                  <div class="single-property mt-30">
-                    <div class="property-img">
-                      <a href="properties-details.html">
-                        <img src="assets/images/propertes/03.jpg" alt="">
-                      </a>
-                    </div>
-                    <div class="property-desc">
-                      <h4><a href="properties-details.html">Royal Casel Alpha</a></h4>
-                      <p>
-                        <span class="location">2 FB New York main city, USA</span>
-                        <span class="property-info">890 Sqft, 2 Bed, 2 Bath, 2Garage </span>
-                      </p>
-                      <div class="price-box">
-                        <p>Rent $28,00/m</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- single-property End -->
-                </div>
-
-                <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-                  <!-- single-property Start -->
-                  <div class="single-property mt-30">
-                    <div class="property-img">
-                      <a href="properties-details.html">
-                        <img src="assets/images/propertes/05.jpg" alt="">
-                      </a>
-                    </div>
-                    <div class="property-desc">
-                      <h4><a href="properties-details.html">Casel de Paradise</a></h4>
-                      <p>
-                        <span class="location">22 First street,Phoenix, USA</span>
-                        <span class="property-info">1850 Sqft, 7 Bed, 4 Bath, 3 Garage </span>
-                      </p>
-                      <div class="price-box">
-                        <p>Price $2,89,000</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- single-property End -->
-                </div>
-
-                <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-                  <!-- single-property Start -->
-                  <div class="single-property mt-30">
-                    <div class="property-img">
-                      <a href="properties-details.html">
-                        <img src="assets/images/propertes/07.jpg" alt="">
-                      </a>
-                    </div>
-                    <div class="property-desc">
-                      <h4><a href="properties-details.html">White Smith Casel</a></h4>
-                      <p>
-                        <span class="location">22 First street, Chicago, USA</span>
-                        <span class="property-info">950 Sqft, 2 Bed, 2 Bath, 1 Garage </span>
-                      </p>
-                      <div class="price-box">
-                        <p>Price $1,53,000</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- single-property End -->
-                </div>
 
               </div>
             </div>
@@ -604,40 +432,7 @@
               <h4 class="widget-title">
                 <span>Etablissement Populaire</span>
               </h4>
-              <div class="single-propertiy-wigets">
-                <div class="row">
 
-                  <div class="col-lg-12 col-md-4">
-                    <div class="single-propertiy mt-30">
-                      <a href="#"><img src="assets/images/propertes/w-propertie-01.jpg" alt=""></a>
-                      <div class="propertiy-det-box">
-                        <h4><a href="#">Casel la Denver</a></h4>
-                        <p>Price $1,09,000</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-12 col-md-4">
-                    <div class="single-propertiy mt-30">
-                      <a href="#"><img src="assets/images/propertes/w-propertie-03.jpg" alt=""></a>
-                      <div class="propertiy-det-box">
-                        <h4><a href="#">White Smith Casel</a></h4>
-                        <p>Price $1,03,000</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-12 col-md-4">
-                    <div class="single-propertiy mt-30">
-                      <a href="#"><img src="assets/images/propertes/w-propertie-02.jpg" alt=""></a>
-                      <div class="propertiy-det-box">
-                        <h4><a href="#">Casel la Denver</a></h4>
-                        <p>Price $1,08,000</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div class="single-widget widget-tag">
